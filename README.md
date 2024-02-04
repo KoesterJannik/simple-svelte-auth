@@ -113,8 +113,7 @@ You can use the utility function from our package
 
 ```typescript
 const isPasswordCorrect = await comparePasswordBcrypt(password, user.hashed_password);
-
-
+```
 
 ### Protected Routes
 
@@ -158,8 +157,11 @@ export const handle: Handle = async ({ event, resolve }) => {
 
  return resolve(event);
 };
+```
 
-now create a +layout.server.ts inside src/(protected)/protected/dashboard
+Now create a +layout.server.ts inside src/(protected)/protected/dashboard
+
+```typescript
 
 import type { LayoutServerLoad } from './protected/$types';
 
@@ -168,7 +170,7 @@ export const load = (async (event) => {
 }) satisfies LayoutServerLoad;
 ```
 
-# Done
+#### Done
 
 Now you can access the user in your server files and use it in your svelte files
 
