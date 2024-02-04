@@ -1,6 +1,6 @@
 {
-	"name": "@jannikkoester/svelte-simple-auth",
-	"version": "0.1.0",
+	"name": "@jannikkoester/general-utils",
+	"version": "0.1.2",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -55,6 +55,7 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
+		"@aws-sdk/client-ses": "^3.504.0",
 		"bcrypt": "^5.1.1",
 		"jsonwebtoken": "^9.0.2"
 	}
