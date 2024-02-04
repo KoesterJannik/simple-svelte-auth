@@ -13,13 +13,13 @@ describe('Auth functions', () => {
 	const payload = { userId: '123' };
 	const password = 'test-password';
 	const saltRounds = 10;
-
 	it('should generate and verify JWT token', async () => {
 		const token = await generateJwtToken(payload, secret, expiresIn);
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		const decoded = (await verifyJwtToken(token, secret)) as any;
+		const decoded = await verifyJwtToken(token, secret);
 
 		expect(decoded.userId).toBe(payload.userId);
+		expect('iat' in decoded).toBe(false);
+		expect('exp' in decoded).toBe(false);
 	});
 
 	it('should hash and compare password', async () => {
